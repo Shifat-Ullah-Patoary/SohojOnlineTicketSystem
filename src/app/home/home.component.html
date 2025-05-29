@@ -1,0 +1,68 @@
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">
+    
+    Shohoz
+  </div>
+  <nav>
+    <a href="#"><span>🏠</span> Home</a>
+    <a href="#"><span>🚌</span> Bus</a>
+    <a href="#"><span>🚆</span> Train</a>
+    <a href="#"><span>✈️</span> Air</a>
+    <a href="#"><span>🔐</span> Login</a>
+  </nav>
+</header>
+
+<!-- HERO SECTION WITH SEARCH -->
+<section class="hero">
+ 
+
+  <div class="overlay">
+    <h1>Book Tickets Easily</h1>
+    <p>Bus, Train, Air & Launch – All in One Place</p>
+
+    <!-- SEARCH FORM -->
+    <div class="search-box">
+      <form class="booking-form">
+        <input type="text" placeholder="From (City)" [(ngModel)]="from" name="from" />
+<input type="text" placeholder="To (City)" [(ngModel)]="to" name="to" />
+<input type="date" [(ngModel)]="date" name="date" />
+<button type="button" (click)="goToBusList()">Search</button>
+
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section class="services">
+  <h2>Our Services</h2>
+  <div class="service-list">
+    <div class="service">
+      <div class="icon">🚌</div>
+      <h3>Bus Tickets</h3>
+      <p>Book from 100+ operators</p>
+    </div>
+    <div class="service">
+      <div class="icon">🚆</div>
+      <h3>Train Tickets</h3>
+      <p>Official Bangladesh Railway partner</p>
+    </div>
+    <div class="service">
+      <div class="icon">✈️</div>
+      <h3>Air Tickets</h3>
+      <p>Domestic and international flights</p>
+    </div>
+    <div class="service">
+      <div class="icon">🚢</div>
+      <h3>Launch Tickets</h3>
+      <p>Safe river transport options</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2025 Shohoz Clone | Built for educational purposes</p>
+</footer>

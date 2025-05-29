@@ -1,0 +1,10 @@
+<div class="confirmation-container" *ngIf="bookingDetails">
+  <h2>🎉 Booking Confirmed!</h2>
+  <p><strong>Name:</strong> {{ bookingDetails.userName }}</p>
+  <p><strong>Phone:</strong> {{ bookingDetails.phone }}</p>
+  <p><strong>Bus:</strong> {{ bookingDetails.busName }}</p>
+  <p><strong>Seats:</strong> {{ bookingDetails.seatNumbers.join(', ') }}</p>
+  <p><strong>Payment Method:</strong> {{ bookingDetails.paymentMethod }}</p>
+</div>
+
+

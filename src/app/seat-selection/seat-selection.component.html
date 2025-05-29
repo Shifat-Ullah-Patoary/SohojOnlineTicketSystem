@@ -1,0 +1,27 @@
+<h2>Select Your Seats – {{ busName }}</h2>
+
+<div class="seats">
+  <div
+    *ngFor="let seat of seats"
+    class="seat"
+    [class.selected]="seat.selected"
+    (click)="toggleSeat(seat)"
+  >
+    {{ seat.number }}
+  </div>
+</div>
+
+<h3>Passenger Details</h3>
+<form (ngSubmit)="confirmBooking()">
+  <input type="text" [(ngModel)]="user.name" name="name" placeholder="Full Name" required />
+  <input type="tel" [(ngModel)]="user.phone" name="phone" placeholder="Phone Number" required />
+  <select [(ngModel)]="user.payment" name="payment" required>
+    <option value="" disabled>Select Payment Method</option>
+    <option value="bkash">Bkash</option>
+    <option value="nagad">Nagad</option>
+    <option value="card">Credit/Debit Card</option>
+  </select>
+
+  <button type="submit" class="confirm-btn">Confirm Booking</button>
+</form>
+
