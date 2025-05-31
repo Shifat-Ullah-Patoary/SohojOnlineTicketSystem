@@ -1,72 +1,94 @@
-:host {
-  display: block;
-  padding: 2rem;
-  background-color: #f4f6f8;
-  font-family: 'Helvetica Neue', sans-serif;
+/* Full background with semi-transparent overlay */
+.bus-list-container {
+  background: url('/assets/busimage.png') no-repeat center center / cover;
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: #fff;
+  background-attachment: fixed;
+  backdrop-filter: blur(4px);
 }
 
-/* Heading */
 h2 {
-  font-size: 1.8rem;
-  color: #1a1a1a;
-  margin-bottom: 2rem;
   text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #fff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Bus list container */
-ul {
+/* List of bus cards */
+.bus-list {
   list-style: none;
   padding: 0;
-  margin: 0 auto;
   max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  gap: 20px;
 }
 
-/* Bus card */
-li {
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  padding: 1.5rem 2rem;
-  margin-bottom: 1.5rem;
+.bus-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  backdrop-filter: blur(8px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-li:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-  transform: translateY(-2px);
+.bus-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Bus details */
-li .bus-info {
+.bus-info {
   display: flex;
   flex-direction: column;
+  gap: 5px;
+  font-size: 16px;
+  color: #fff;
 }
 
-li .bus-info strong {
-  font-size: 1.2rem;
-  color: #2c3e50;
+/* Select Button */
+button {
+  background-color: #1e88e5;
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-li .bus-info span {
-  font-size: 0.95rem;
-  color: #7f8c8d;
-  margin-top: 4px;
+button:hover {
+  background-color: #1565c0;
 }
 
-/* Price */
-li .price {
-  font-size: 1.1rem;
-  color: #27ae60;
-  font-weight: 600;
-}
-
-/* No result message */
-p {
+.no-bus-message {
   text-align: center;
-  font-size: 1rem;
-  color: #999;
-  margin-top: 2rem;
+  margin-top: 30px;
+  font-size: 18px;
+  color: #ffeb3b;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .bus-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .bus-info {
+    font-size: 14px;
+  }
+
+  button {
+    align-self: center;
+    width: 100%;
+  }
 }

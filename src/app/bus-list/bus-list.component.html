@@ -1,13 +1,16 @@
-<h2>Available Buses for {{ from }} to {{ to }} on {{ date }}</h2>
+<div class="bus-list-container">
+  <h2>Available Buses for {{ from }} to {{ to }} on {{ date }}</h2>
 
+  <ul class="bus-list">
+    <li *ngFor="let bus of filteredBuses" class="bus-card">
+      <div class="bus-info">
+        <strong>{{ bus.name }}</strong>
+        <span>{{ bus.time }}</span>
+        <span>৳{{ bus.price }}</span>
+      </div>
+      <button (click)="selectBus(bus.name)">Select</button>
+    </li>
+  </ul>
 
-
-<ul>
-  <li *ngFor="let bus of filteredBuses">
-  <strong>{{ bus.name }}</strong> – {{ bus.time }} – ৳{{ bus.price }}
-  <button (click)="selectBus(bus.name)">Select</button>
-</li>
-
-</ul>
-
-<p *ngIf="filteredBuses.length === 0">No buses found.</p>
+  <p *ngIf="filteredBuses.length === 0" class="no-bus-message">No buses found.</p>
+</div>
