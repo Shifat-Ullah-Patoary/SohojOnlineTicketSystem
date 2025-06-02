@@ -25,8 +25,8 @@ export class BusListComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe((params) => {
-      this.from = (params['from'] || '').trim().toLowerCase();
-      this.to = (params['to'] || '').trim().toLowerCase();
+      this.from = (params['from'] || '').trim()
+      this.to = (params['to'] || '').trim()
       this.date = params['date'] || '';
 
       this.searchBuses();
@@ -46,7 +46,11 @@ export class BusListComponent implements OnInit {
 
   selectBus(busName: string) {
     this.router.navigate(['/seat-selection'], {
-      queryParams: { bus: busName },
+      queryParams: { bus: busName ,
+        from: this.from,
+      to: this.to,
+      date: this.date
+      },
     });
   }
 }

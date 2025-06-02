@@ -23,10 +23,12 @@ export class BookingConfirmationComponent {
       to: '',
       date: '',
       time: '',
+      price:'',
       seatNumbers: [],
       userName: '',
       phone: '',
       paymentMethod: ''
     };
+    console.log('Booking Details:', this.bookingDetails);
   }
 }

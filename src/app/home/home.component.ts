@@ -22,8 +22,8 @@ export class HomeComponent {
   constructor(private router: Router) {}
 
   from = '';
-to = '';
-date = '';
+   to = '';
+  date = '';
 
 
  goToBusList() {
