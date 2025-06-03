@@ -23,11 +23,11 @@ export class LoginComponent {
 
 login() {
     this.authService.login(this.username, this.password).subscribe({
-      next: (response: string) => { // Changed 'any' to 'string'
+      next: (response: string) => { 
         console.log('Login successful', response);
         if (response === 'Login successful') {
           this.router.navigate(['/home']);
-          this.errorMessage = '';
+          this.errorMessage = ''; 
         } else {
           console.error ('Login failed: Backend returned:', response);
           this.errorMessage = 'Login failed. Please check your credentials.';

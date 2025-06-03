@@ -44,9 +44,11 @@ export class BusListComponent implements OnInit {
     });
   }
 
-  selectBus(busName: string) {
+  selectBus(busName: string, busTime:string, busPrice:string) {
     this.router.navigate(['/seat-selection'], {
       queryParams: { bus: busName ,
+        time:busTime,
+        price:busPrice,
         from: this.from,
       to: this.to,
       date: this.date

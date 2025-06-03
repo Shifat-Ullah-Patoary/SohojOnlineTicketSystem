@@ -12,12 +12,16 @@ import { FormsModule } from '@angular/forms';
 })
 export class SeatSelectionComponent implements OnInit {
   busName = '';
+  busTime='';
+  busPrice = '';
+
   seats: { label: string; selected: boolean }[] = [];
   selectedSeats: string[] = [];
 
   from = '';
   to = '';
   date = '';
+  
 
   user = {
     name: '',
@@ -34,6 +38,8 @@ export class SeatSelectionComponent implements OnInit {
     this.from = this.route.snapshot.queryParamMap.get('from') || '';
     this.to = this.route.snapshot.queryParamMap.get('to') || '';
     this.date = this.route.snapshot.queryParamMap.get('date') || '';
+    this.busTime = this.route.snapshot.queryParamMap.get('time') || '';
+    this.busPrice = this.route.snapshot.queryParamMap.get('price') || '';
 
     const rowLabels = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
     this.seats = [];
@@ -76,7 +82,8 @@ export class SeatSelectionComponent implements OnInit {
           from: this.from,
           to: this.to,
           date: this.date,
-          time: '10:00 AM', 
+          busTime: this.busTime,
+          busPrice:this.busPrice,
           busName: this.busName,
           seatNumbers: this.selectedSeats,
           paymentMethod: this.user.payment

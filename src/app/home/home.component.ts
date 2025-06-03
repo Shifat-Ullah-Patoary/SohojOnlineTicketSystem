@@ -27,13 +27,19 @@ export class HomeComponent {
 
 
  goToBusList() {
-  this.router.navigate(['/bus-list'], {
+  if(this.from && this.to && this.date)
+  {
+    this.router.navigate(['/bus-list'], {
     queryParams: {
       from: this.from,
       to: this.to,
       date: this.date
     }
   });
+  }
+  else{
+    alert('Please fill in all fields before searching for buses.');
+  }
 }
 
 }
